@@ -19,7 +19,7 @@ export default function App() {
   }, []);
 
   return (
-    <ThemeProvider theme="dark" images={images}>
+    <ThemeProvider theme="light" images={images}>
       <AuthProvider>
         <Navigation />
       </AuthProvider>

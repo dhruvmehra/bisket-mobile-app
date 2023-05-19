@@ -6,8 +6,11 @@ import TabBarIcon from "../components/utils/TabBarIcon";
 import TabBarText from "../components/utils/TabBarText";
 
 import Home from "../screens/Home";
-import About from "../screens/About";
+import Search from "../screens/Search";
+import Saved from "../screens/Saved";
 import Profile from "../screens/Profile";
+import CurationScreen from "../screens/CurationScreen";
+import ProductDisplayPage from "../screens/ProductDisplayPage";
 
 const Tabs = createBottomTabNavigator();
 const MainTabs = () => {
@@ -36,6 +39,30 @@ const MainTabs = () => {
         }}
       />
       <Tabs.Screen
+        name="Search"
+        component={Search}
+        options={{
+          tabBarLabel: ({ focused }) => (
+            <TabBarText focused={focused} title="Search" />
+          ),
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} icon={"ios-search"} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="Saved"
+        component={Saved}
+        options={{
+          tabBarLabel: ({ focused }) => (
+            <TabBarText focused={focused} title="Saved" />
+          ),
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} icon={"ios-bookmark"} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="Profile"
         component={Profile}
         options={{
@@ -44,18 +71,6 @@ const MainTabs = () => {
           ),
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} icon={"person"} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="About"
-        component={About}
-        options={{
-          tabBarLabel: ({ focused }) => (
-            <TabBarText focused={focused} title="About" />
-          ),
-          tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} icon={"ios-information-circle"} />
           ),
         }}
       />

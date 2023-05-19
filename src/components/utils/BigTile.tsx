@@ -44,8 +44,8 @@ const styles = StyleSheet.create({
     margin: 3,
   },
   itemPhoto: {
-    width: 120,
-    height: 180,
+    width: 190,
+    height: 250,
     borderRadius: 10,
   },
   itemText: {

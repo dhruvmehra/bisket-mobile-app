@@ -15,6 +15,11 @@ export default ({ item, handlePress }: { item: any[]; handlePress: any }) => {
   const { isDarkmode } = useTheme();
   return (
     <TouchableOpacity style={styles.item} onPress={handlePress}>
+      <View style={styles.headerContainer}>
+        <Text style={styles.headerText}>{item.textHeader}</Text>
+        <Text style={styles.subHeaderText}>{item.textsubHeader}</Text>
+      </View>
+
       <Image
         source={{
           uri: item.uri,
@@ -44,8 +49,8 @@ const styles = StyleSheet.create({
     margin: 3,
   },
   itemPhoto: {
-    width: 120,
-    height: 180,
+    width: 380,
+    height: 420,
     borderRadius: 10,
   },
   itemText: {
@@ -54,5 +59,24 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 8,
     left: 5,
+  },
+  headerContainer: {
+    fontWeight: "800",
+    fontSize: 42,
+    height: 50,
+    width: 400,
+    left: 5,
+    marginBottom: 5,
+    marginTop: 5,
+  },
+  textHeader: {
+    fontSize: 36,
+    alignItems: "left",
+  },
+  textsubHeader: {
+    fontWeight: "800",
+    fontSize: 36,
+    marginTop: 5,
+    marginBottom: 5,
   },
 });
