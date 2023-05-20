@@ -13,7 +13,13 @@ import { MainStackParamList } from "../types/navigation";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import BigTile from "./BigTile";
 
-export default ({ sections }: { sections: any[] }) => {
+export default ({
+  sections,
+  handleBigTilePress,
+}: {
+  sections: any[];
+  handleBigTilePress: any;
+}) => {
   const { isDarkmode } = useTheme();
   const styles = StyleSheet.create({
     container: {
@@ -51,7 +57,9 @@ export default ({ sections }: { sections: any[] }) => {
                 <FlatList
                   data={section.data}
                   numColumns={2}
-                  renderItem={({ item }) => <BigTile item={item} />}
+                  renderItem={({ item }) => (
+                    <BigTile item={item} handlePress={handleBigTilePress} />
+                  )}
                   showsHorizontalScrollIndicator={false}
                 />
               ) : null}
@@ -61,7 +69,7 @@ export default ({ sections }: { sections: any[] }) => {
             if (section.horizontal) {
               return null;
             }
-            return <BigTile item={item} />;
+            return <BigTile item={item} handlePress={handleBigTilePress} />;
           }}
         />
       </SafeAreaView>

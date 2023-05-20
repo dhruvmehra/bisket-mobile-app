@@ -9,7 +9,6 @@ import Grid from "../components/utils/Grid";
 export default function ({
   navigation,
 }: NativeStackScreenProps<MainStackParamList, "ProductDisplayPage">) {
-  const [search, setSearch] = useState("");
   return (
     <Layout>
       <View

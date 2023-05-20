@@ -69,7 +69,9 @@ export default ({
                 <FlatList
                   horizontal
                   data={section.data}
-                  renderItem={({ item }) => <Tile item={item} />}
+                  renderItem={({ item }) => (
+                    <Tile item={item} handlePress={handleProductTilePress} />
+                  )}
                   showsHorizontalScrollIndicator={false}
                 />
               ) : null}

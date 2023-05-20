@@ -29,6 +29,7 @@ export default function ({
 }: NativeStackScreenProps<MainStackParamList, "CurationScreen">) {
   const { isDarkmode, setTheme } = useTheme();
   const { metadata } = route.params;
+  console.log("This screen opened");
 
   return (
     <Layout>
@@ -59,6 +60,7 @@ export default function ({
               data: metadata.bodyData[0].data,
             },
           ]}
+          handleBigTilePress={() => navigation.navigate("ProductDisplayPage")}
         />
       </Section>
     </Layout>
