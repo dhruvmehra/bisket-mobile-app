@@ -18,16 +18,17 @@ import SpotlightTile from "./utils/SpotlightTile";
 export default ({
   data,
   onSpotlightPress,
-  onProductTilePress,
+  navigationParam,
 }: {
   data: any[];
   onSpotlightPress: any;
-  onProductTilePress: any;
+  navigationParam: any;
 }) => {
   return (
     <View style={styles.container}>
       <View
         style={{
+          width: 420,
           backgroundColor: data.backgroundColor,
           alignItems: "center",
         }}
@@ -40,7 +41,7 @@ export default ({
           />
           <Carousell
             sections={data.bodyData}
-            handleProductTilePress={onProductTilePress}
+            navigationParam={navigationParam}
           />
         </View>
       </View>

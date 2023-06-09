@@ -13,7 +13,13 @@ import { MainStackParamList } from "../types/navigation";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import Tile from "./Tile";
 
-export default ({ sections }: { sections: any[] }) => {
+export default ({
+  sections,
+  navigation,
+}: {
+  sections: any[];
+  navigation: any;
+}) => {
   const { isDarkmode } = useTheme();
   const styles = StyleSheet.create({
     container: {
@@ -55,8 +61,8 @@ export default ({ sections }: { sections: any[] }) => {
                   // numColumns={Math.ceil(section.data.length / 2)}
                   renderItem={({ item }) => (
                     <View>
-                      <Tile item={item} />
-                      <Tile item={item} />
+                      <Tile item={item[0]} navigationParam={navigation} />
+                      <Tile item={item[1]} navigationParam={navigation} />
                     </View>
                   )}
                   showsHorizontalScrollIndicator={false}
@@ -70,8 +76,8 @@ export default ({ sections }: { sections: any[] }) => {
             }
             return (
               <View>
-                <Tile item={item} />
-                <Tile item={item} />
+                <Tile item={item[0]} navigationParam={navigation} />
+                <Tile item={item[1]} navigationParam={navigation} />
               </View>
             );
           }}

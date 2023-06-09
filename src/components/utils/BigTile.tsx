@@ -11,10 +11,21 @@ import {
 } from "react-native";
 import { Text, themeColor, useTheme } from "react-native-rapi-ui";
 
-export default ({ item, handlePress }: { item: any[]; handlePress: any }) => {
+export default ({
+  item,
+  navigationParam,
+}: {
+  item: any[];
+  navigationParam: any;
+}) => {
   const { isDarkmode } = useTheme();
   return (
-    <TouchableOpacity style={styles.item} onPress={handlePress}>
+    <TouchableOpacity
+      style={styles.item}
+      onPress={() => {
+        navigationParam.navigate("ProductDisplayPage", { metadata: item.uri });
+      }}
+    >
       <Image
         source={{
           uri: item.uri,

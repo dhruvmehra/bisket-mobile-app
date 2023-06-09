@@ -11,10 +11,22 @@ import {
 } from "react-native";
 import { Text, themeColor, useTheme } from "react-native-rapi-ui";
 
-export default ({ item, handlePress }: { item: any[]; handlePress: any }) => {
+export default ({
+  item,
+  navigationParam,
+}: {
+  item: any[];
+  navigationParam: any;
+}) => {
   const { isDarkmode } = useTheme();
+  // console.log("Item -->", item);
   return (
-    <TouchableOpacity style={styles.item} onPress={handlePress}>
+    <TouchableOpacity
+      style={styles.item}
+      onPress={() => {
+        navigationParam.navigate("ProductDisplayPage", { metadata: item.uri });
+      }}
+    >
       <Image
         source={{
           uri: item.uri,
@@ -23,7 +35,8 @@ export default ({ item, handlePress }: { item: any[]; handlePress: any }) => {
         style={styles.itemPhoto}
         resizeMode="cover"
       />
-      <Text style={styles.itemText}>{item.text}</Text>
+
+      <Text style={styles.itemText}> {item.text} </Text>
     </TouchableOpacity>
   );
 };
@@ -49,10 +62,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   itemText: {
-    color: "rgba(255, 255, 255, 1)",
+    color: "black",
     marginTop: 5,
     position: "absolute",
     bottom: 8,
     left: 5,
+    backgroundColor: "white",
+    borderRadius: 5,
   },
 });

@@ -15,10 +15,10 @@ import Tile from "./Tile";
 
 export default ({
   sections,
-  handleProductTilePress,
+  navigationParam,
 }: {
   sections: any[];
-  handleProductTilePress: any;
+  navigationParam: any;
 }) => {
   const { theme, isDarkmode } = useTheme();
 
@@ -70,7 +70,7 @@ export default ({
                   horizontal
                   data={section.data}
                   renderItem={({ item }) => (
-                    <Tile item={item} handlePress={handleProductTilePress} />
+                    <Tile item={item} navigationParam={navigationParam} />
                   )}
                   showsHorizontalScrollIndicator={false}
                 />

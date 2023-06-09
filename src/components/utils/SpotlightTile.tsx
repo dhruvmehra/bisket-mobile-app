@@ -63,19 +63,19 @@ const styles = StyleSheet.create({
   headerContainer: {
     fontWeight: "800",
     fontSize: 42,
-    height: 50,
+    height: 80,
     width: 400,
     left: 5,
     marginBottom: 5,
     marginTop: 5,
   },
-  textHeader: {
-    fontSize: 36,
-    alignItems: "left",
-  },
-  textsubHeader: {
+  headerText: {
+    fontSize: 22,
     fontWeight: "800",
-    fontSize: 36,
+  },
+  subHeaderText: {
+    fontWeight: "400",
+    fontSize: 18,
     marginTop: 5,
     marginBottom: 5,
   },

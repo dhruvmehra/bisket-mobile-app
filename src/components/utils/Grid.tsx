@@ -15,10 +15,10 @@ import BigTile from "./BigTile";
 
 export default ({
   sections,
-  handleBigTilePress,
+  navigationParam,
 }: {
   sections: any[];
-  handleBigTilePress: any;
+  navigationParam: any;
 }) => {
   const { isDarkmode } = useTheme();
   const styles = StyleSheet.create({
@@ -58,7 +58,7 @@ export default ({
                   data={section.data}
                   numColumns={2}
                   renderItem={({ item }) => (
-                    <BigTile item={item} handlePress={handleBigTilePress} />
+                    <BigTile item={item} navigationParam={navigationParam} />
                   )}
                   showsHorizontalScrollIndicator={false}
                 />
@@ -69,7 +69,7 @@ export default ({
             if (section.horizontal) {
               return null;
             }
-            return <BigTile item={item} handlePress={handleBigTilePress} />;
+            return <BigTile item={item} navigationParam={navigationParam} />;
           }}
         />
       </SafeAreaView>
